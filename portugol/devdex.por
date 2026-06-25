@@ -54,6 +54,15 @@ programa {
 
         caso 2:
               escreva("\nConsultando Pokédex...\n")
+              
+              inteiro i
+
+              para(i=0; i < quantidade;i++) {
+                  escreva("\n", nomes[i])
+                  escreva("\n", tipos[i])
+                  escreva("\n", niveis[i],"\n")
+              }
+              
               pare
 
         caso 3: 
