@@ -29,6 +29,19 @@ programa {
         escolha(opcao) {
         caso 1:
               escreva("\nAbrindo cadastro...\n")
+              cadeia nome
+              cadeia tipo
+              inteiro nivel
+
+              escreva("Nome: ")
+              leia(nome)
+
+              escreva("Tipo: ")
+              leia(tipo)
+
+              escreva("Nível: ")
+              leia(nivel)
+              
               pare
 
         caso 2:
