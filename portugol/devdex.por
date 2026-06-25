@@ -1,42 +1,44 @@
 programa {
   funcao inicio() {
     cadeia nomeTreinador
-    inteiro ocao = 0
+    inteiro opcao = 0
 
     escreva("Qual é o seu nome, treinador? ")
     leia(nomeTreinador)
 
     escreva("\nBem-vindo, ", nomeTreinador, "!\n")
-    escreva("Sua jornada como treinador Pokémon vai começar...")
+    escreva("\nSua Pokédex está pronta para uso.\n")
 
     enquanto(opcao != 4) {
-        escreva("\n=== DEVDEX ===\n")
-        escreva("Cadastrar [1]\n")
-        escreva("Listar [2]\n")
-        escreva("Buscar [3]\n")
-        escreva("Sair [4]\n")
-        escreva("Escolha: ")
+        escreva("\n====================")
+        escreva("\nPOKÉDEX DE ", nomeTreinador)
+        escreva("\n====================")
+        escreva("\n1 - Cadastrar Pokémon")
+        escreva("\n2 - Listar Pokémon")
+        escreva("\n3 - Buscar")
+        escreva("\n4 - Sair")
+        escreva("\nEscolha: ")
         leia(opcao)
 
         escolha(opcao) {
         caso 1:
-              escreva("Cadastrar Pokémon\n")
+              escreva("\nAbrindo cadastro...\n")
               pare
 
         caso 2:
-              escreva("Listar Pokémon\n")
+              escreva("\nConsultando Pokédex...\n")
               pare
 
         caso 3: 
-              escreva("Buscar Pokémon\n")
+              escreva("\nIniciando busca...\n")
               pare
 
         caso 4: 
-              escreva("Encerrando...\n")
+              escreva("\nAté logo, ", nomeTreinador, "!\n")
               pare
         
         caso contrario:
-              escreva("Opcão inválida!\n")
+              escreva("\nOpcão inválida!\n")
             
             }
         }
