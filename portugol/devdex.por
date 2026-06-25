@@ -1,4 +1,10 @@
 programa {
+
+  cadeia nomes[50]
+  cadeia tipos[50]
+  inteiro niveis[50]
+  inteiro quantidade = 0
+
   funcao inicio() {
     cadeia nomeTreinador
     inteiro opcao = 0
