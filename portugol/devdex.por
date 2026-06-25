@@ -42,6 +42,14 @@ programa {
               escreva("Nível: ")
               leia(nivel)
               
+              nomes[quantidade] = nome
+              tipos[quantidade] = tipo
+              niveis[quantidade] = nivel
+
+              quantidade++
+
+              escreva("\nPokémon cadastrado com sucesso!")
+
               pare
 
         caso 2:
