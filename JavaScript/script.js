@@ -59,5 +59,22 @@ function cadastrarPokemon() {
 
 function listarPokemon() {
 
-    
+    const listaDiv = document.getElementById("listaPokemon");
+    listaDiv.innerHTML = "";
+
+    if (pokedexLista.length === 0) {
+        listaDiv.innerHTML = "<p style='color: red;'>Nenhum Pokémon cadastrado ainda!</p>";
+        return;
+    }
+
+    pokedexLista.forEach((pokemon, index) => {
+
+        const cardPokemon = `<div style="border: 1px solid #ccc; padding: 10px; margin: 10px 0; border-radius: 5px;">
+                                <strong>#${index + 1} - ${pokemon.nome}</strong><br>
+                                <span>Tipo: ${pokemon.tipo}</span><br>
+                                <span>Nivel: ${pokemon.nivel}</span>
+                            </div>`;
+
+                            listaDiv.innerHTML += cardPokemon;
+    })
 }
