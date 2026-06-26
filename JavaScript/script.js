@@ -3,7 +3,7 @@ const pokedexLista = []; // ARRAY GLOBAL PARA ARMAZENAR OS OBJETOS POKÉMON
 const botaoJornada = document.getElementById("btnJornada").addEventListener("click", iniciarJornada); // PEGAMOS O BOTÃO PELA  ID, ARMAZENAMOS NA VARIÁVEL E FAZEMOS O EVENTO DE CLIQUE ACONTECER
 const botaoCadastro = document.getElementById("btnCadastrar").addEventListener("click", cadastrarPokemon); // PEGAMOS O ID DO BOTÃO DE CADASTRO E O ARMAZENAMOS NA VARIÁVEL, FAZENDO O EVENTO DE CLIQUE ACONTECER
 
-function iniciarJornada() {
+function iniciarJornada() { // ACIONA QUANDO CLICAMOS NO BOTÃO DE COMEÇAR JORNADA
 
     const nome = document.getElementById("nomeTreinador").value.trim(); // PEGA O VALOR DIGITADO NO INPUT
     const nomeUpperCase = nome.toUpperCase(); // TRANSFORMA O NOME DIGITADO EM UPPERCASE PARA O TITULO
@@ -34,5 +34,5 @@ function cadastrarPokemon() {
     const tipoPokemon = inputTipo.value.trim();
     const nivelPokemon = inputNivel.value.trim();
 
-    
+
 }
