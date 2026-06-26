@@ -26,4 +26,13 @@ function iniciarJornada() {
 
 function cadastrarPokemon() {
     
+    const inputNome = document.getElementById("pokeNome");
+    const inputTipo = document.getElementById("pokeTipo");
+    const inputNivel = document.getElementById("pokeNivel");
+
+    const nomePokemon = inputNome.value.trim();
+    const tipoPokemon = inputTipo.value.trim();
+    const nivelPokemon = inputNivel.value.trim();
+
+    
 }
