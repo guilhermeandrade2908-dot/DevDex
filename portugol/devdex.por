@@ -58,9 +58,9 @@ programa {
               inteiro i
 
               para(i=0; i < quantidade;i++) {
-                  escreva("\n", nomes[i])
-                  escreva("\n", tipos[i])
-                  escreva("\n", niveis[i],"\n")
+                escreva("\n", nomes[i])
+                escreva("\n", tipos[i])
+                escreva("\n", niveis[i],"\n")
               }
               
               pare
