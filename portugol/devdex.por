@@ -67,6 +67,29 @@ programa {
 
         caso 3: 
               escreva("\nIniciando busca...\n")
+              
+              cadeia busca
+              inteiro encontrado = 0 
+
+              escreva("\nDigite o nome do Pokémon: ")
+              leia(busca)
+
+              para(i=0;i<quantidade;i++) {
+                
+                se(nomes[i] == busca) {
+                  escreva("\nPokémon encontrado!")
+                  escreva("\nNome: ", nomes[i])
+                  escreva("\nTipo: ", tipos[i])
+                  escreva("\nNível: ", niveis[i],"\n")
+
+                  encontrado = 1
+                }
+              }
+
+                se(encontrado == 0) {
+                  escreva("\nPokémon não encontrado.")
+                }
+              
               pare
 
         caso 4: 
