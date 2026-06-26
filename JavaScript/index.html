@@ -16,10 +16,21 @@
     </header>
 
     <div id="menuPokedex">
+        
         <button id="btnCdastrar">Cadastrar Pokémon</button>
         <button id="btnListar">Listar Pokémon</button>
         <button id="btnBuscar">Buscar Pokémon</button>
         <button id="btnSair">Sair</button>
+
+        <div id="areaCadastro">
+            <h3>Novo Pokémon</h3>
+            <input type="text" id="pokeNome" placeholder="Nome: (Ex: Pikachu)"><br><br>
+            <input type="text" id="pokeTipo" placeholder="Tipo: (Ex: Elétrico)"><br><br>
+            <input type="number" id="pokeNivel" placeholder="Nível: (Ex: 15)"><br><br>
+            <button id="btnCadastrar">Salvar na Pokédex</button>
+            <p id="msgCadastro"></p>
+        </div>
+
     </div>
     <script src="script.js"></script>
 </body>
