@@ -7,22 +7,32 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1 id="title">POKÉDEX</h1>
-        <h3 id="pergunta">Qual é o seu nome, treinador?</h3>
-        <input type="text" id="nomeTreinador" placeholder="Ex: Ash">
-        <p id="mensagem"></p><br>
-        <button id="btnJornada">Começar Jornada</button>
-    </header>
 
-    <div id="menuPokedex">
+    <div class="pokedex-case">
+
+        <div class="pokedex-topo">
+            <div class="luz-azul"></div>
+            <div class="luzes-pequenas">
+                <div class="luz-vermelha"></div>
+                <div class="luz-amarela"></div>
+                <div class="luz-verde"></div>
+            </div>
+        </div>
+
+        <header>
+            <h1 id="title">POKÉDEX</h1>
+            <div class="pokedex-tela">
+                <p id="mensagem">Digite seu nome para iniciar sua jornada de mestre pokémon!</p>
+
+                <div id="pergunta">
+                    <input type="text" id="nomeTreinador" placeholder="Nome do Treinador">
+                    <button id="btnJornada">Começar Jornada</button>
+                </div>
+            </div>
+        </header>
+            
         
-        <button id="btnCdastrar">Cadastrar Pokémon</button>
-        <button id="btnListar">Listar Pokémon</button>
-        <button id="btnBuscar">Buscar Pokémon</button>
-        <button id="btnSair">Sair</button>
-
-        <div id="areaCadastro">
+        <div id="areaCadastro" class="aba-conteudo">
             <h3>Novo Pokémon</h3>
             <input type="text" id="pokeNome" placeholder="Nome: (Ex: Pikachu)"><br><br>
             <input type="text" id="pokeTipo" placeholder="Tipo: (Ex: Elétrico)"><br><br>
@@ -30,20 +40,27 @@
             <button id="btnCadastrar">Salvar na Pokédex</button>
             <p id="msgCadastro"></p>
         </div>
-
-        <div id="areaLista">
+        
+        <div id="areaLista" class="aba-conteudo">
             <h3>Meus Pokémon Registrados</h3>
             <div id="listaPokemon"></div>
         </div>
-
-        <div id="areaBusca">
+        
+        <div id="areaBusca" class="aba-conteudo">
             <h3>Buscar Pokémon</h3>
             <input type="text" id="buscaNome" placeholder="Digite o nome do Pokémon que deseja buscar"><br><br>
             <button id="btnExecutarBusca">Buscar</button>
             <div id="resultadoBusca"></div>
         </div>
-
+        
+        <div id="menuPokedex" class="pokedex-btn" style="display: none;">
+            <button id="btnAbaCadastrar" class="btn-console azul">Cadastrar Pokémon</button>
+            <button id="btnAbaListar" class="btn-console verde">Listar Pokémon</button>
+            <button id="btnAbaBuscar" class="btn-console amarelo">Buscar Pokémon</button>
+            <button id="btnSair">Sair</button>
+        </div>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>
