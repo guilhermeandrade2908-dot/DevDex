@@ -4,6 +4,7 @@ const botaoJornada = document.getElementById("btnJornada").addEventListener("cli
 const botaoCadastro = document.getElementById("btnCadastrar").addEventListener("click", cadastrarPokemon); // PEGAMOS O ID DO BOTÃO DE CADASTRO E O ARMAZENAMOS NA VARIÁVEL, FAZENDO A FUNÇÃO DE CADASTRO SER EXECUTADA AO CLICAR
 const botaoListar = document.getElementById("btnListar").addEventListener("click", listarPokemon); // PEGAMOS O ID DO BOTÃO DE LISTAGEM E ARMAZENAMOS NA VARIÁVEL, FAZENDO A FUNÇÃO DE LISTAGEM SER EXECUTADA AO CLICAR
 const executeBusca = document.getElementById("btnExecutarBusca").addEventListener("click", buscarPokemon); // PEGAMOS O ID DO BOTÃO DE BUSCA E ARMAZENAMOS NA VARIÁVEL, FAZENDO A FUNÇÃO DE BUSCA SER EXECUTADA AO CLICAR
+const botaoSair = document.getElementById("btnSair").addEventListener("click", sairPokedex); // PEGAMOS O ID DO BOTÃO DE SAIR E ARMAZENAMOS NA VARIÁVEL, FAZENDO A FUNÇÃO DE SAIR SER EXECUTADA AO CLICAR
 
 function iniciarJornada() { // ACIONA QUANDO CLICAMOS NO BOTÃO DE COMEÇAR JORNADA
 
@@ -110,4 +111,27 @@ function buscarPokemon() { // ACIONA A FUNÇÃO DE BUSCAR O POKÉMON PELO NOME
     if (!encontrado) { // CASO NÃO SEJA ENCONTRADO, GERA ESSA MENSAGEM
         resultadoBuscaDiv.innerHTML = "<p style='color: red;'>Pokémon não encontrado.</p>";
     }
+}
+
+function sairPokedex() { // ACIONA A FUNÇÃO DE SAIR DA POKÉDEX
+
+    const confirmar = confirm("Tem certeza que deseja sair e zerar sua Pokédex?"); // MENSAGEM DE CONFIRMAÇÃO PARA O USUÁRIO
+
+    if (confirmar) { // SE O USUÁRIO CONFIRMAR, APAGA TUDO E RESETA O SITE
+
+        pokedexLista.length = 0; // MUDA O TAMANHO DO ARRAY, APAGANDO OS OBJETOS ANTERIORES
+
+        // FAZ TUDO VOLTAR AO ESTADO ANTERIOR:
+        document.getElementById("listaPokemon").innerHTML = "";
+        document.getElementById("resultadoBusca").innerHTML = "";
+        document.getElementById("buscaNome").value = "";
+        
+        document.getElementById("title").innerText = "POKÉDEX";
+        document.getElementById("nomeTreinador").value = "";
+        document.getElementById("mensagem").innerText = "Você saiu da Pokédex. Digite seu nome para iniciar uma nova jornada!";
+        document.getElementById("msgCadastro").innerText = "";
+        
+        document.getElementById("pergunta").style.display = "block";
+    }
+
 }
