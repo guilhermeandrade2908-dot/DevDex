@@ -1,0 +1,240 @@
+* {
+   
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+
+    background-color: #2c3e50;
+    font-family: "Press Start 2P", system-ui;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.pokedex-case {
+
+    background-color: #dc0d1e;
+    width: 380px;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 10px 0 #8b0000, 0 15px 20px rgba(0,0,0,0.5);
+    border: 4px solid #333;
+}
+
+h1 {
+
+    text-align: center;
+    color: #fff;
+    margin: 10px 0;
+    text-shadow: 2px 2px #333;
+    font-size: 24px;
+}
+
+.pokedex-topo {
+
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.luz-azul {
+
+    width: 40px;
+    height: 40px;
+    background-color: #00bfff;
+    border: 3px solid white;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #00bfff;
+}
+
+.luzes-pequenas {
+
+    display: flex;
+    margin-left: 15px;
+    gap: 8px;
+}
+
+.luzes-pequenas div {
+
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 1px solid #333;
+}
+
+.luz-vermelha {
+    background-color: #ff0000;
+}
+
+.luz-amarela {
+    border-color: #ffcc00;
+}
+
+.luz-verde {
+    background-color: #00ff00;
+}
+
+.pokedex-tela {
+
+    background-color: #c8d6e5;
+    border: 4px solid #333;
+    border-radius: 10px;
+    padding: 15px;
+    min-height: 220px;
+    max-height: 350px;
+    overflow-y: auto;
+    box-shadow: 3px 3px 10px rgba(0,0,0,0.3);
+}
+
+.pokedex-tela h3 {
+
+    margin-top: 0;
+    margin-bottom: 6px;
+    color: #222;
+    border-bottom: 2px dashed #555;
+    padding-bottom: 3px;
+    font-size: 11px;
+}
+
+input {
+
+    width: calc(100% - 20px);
+    padding: 5px 8px;
+    margin: 4px 0;
+    border: 2px solid #333;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+#pergunta button, #areaCadastro button, #areaBusca button {
+    
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 5px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: bold;
+}
+
+#mensagem {
+
+    margin-top: 0;
+    margin-bottom: 8px;
+    font-size: 11px;
+    line-height: 1.3;
+}
+
+.aba-conteudo {
+
+    display: none;
+    margin-top: 15px;
+}
+
+.pokedex-btn {
+
+    display: none;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.btn-console {
+
+    padding: 10px 4px; 
+    font-family: inherit;
+    font-weight: bold;
+    font-size: 11px;
+    color: white;
+    border: 2px solid #333;
+    border-radius: 8px;
+    cursor: pointer;
+    text-shadow: 1px 1px #333;
+    box-shadow: 0 4px 0 #333;
+}
+
+.btn-console:active {
+
+    transform: translateY(3px);
+    box-shadow: 0 1px 0 #333;
+}
+
+.azul {
+    background-color: #2980b9;
+}
+
+.verde {
+    background-color: #27ae60;
+}
+
+.amarelo {
+    background-color: #f1c40f; 
+    color: #333;
+    text-shadow: none;
+}
+
+#btnSair {
+
+    background-color: #2c3e50;
+    padding: 10px 4px;
+    font-family: inherit;
+    font-weight: bold;
+    font-size: 11px;
+    color: white;
+    border: 2px solid #333;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 0 #333;
+}
+
+#btnSair:active {
+
+    transform: translateY(3px);
+    box-shadow: 0 1px 0  #333;
+}
+
+#listaPokemon div, #resultadoBusca div {
+
+    background-color: #fff;
+    border: 2px solid #333 !important;
+    color: #333;
+    margin-bottom: 6px !important;
+    padding: 6px 8px !important;
+    font-size: 11px;
+    line-height: 1.2;
+}
+
+.pokedex-footer {
+
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 4px solid #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.caixa-som {
+    display: flex;
+    gap: 5px;
+}
+
+.caixa-som div {
+
+    width: 6px;
+    height: 30px;
+    background-color: #333;
+    border-radius: 3px;
+}
