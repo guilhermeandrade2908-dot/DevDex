@@ -3,6 +3,7 @@ const pokedexLista = []; // ARRAY GLOBAL PARA ARMAZENAR OS OBJETOS POKÉMON
 const botaoJornada = document.getElementById("btnJornada").addEventListener("click", iniciarJornada); // PEGAMOS O BOTÃO PELA  ID, ARMAZENAMOS NA VARIÁVEL E FAZEMOS A FUNÇÃO DE INICIAR JORNADA SER EXECUTADO AO CLICARMOS
 const botaoCadastro = document.getElementById("btnCadastrar").addEventListener("click", cadastrarPokemon); // PEGAMOS O ID DO BOTÃO DE CADASTRO E O ARMAZENAMOS NA VARIÁVEL, FAZENDO A FUNÇÃO DE CADASTRO SER EXECUTADA AO CLICAR
 const botaoListar = document.getElementById("btnListar").addEventListener("click", listarPokemon); // PEGAMOS O ID DO BOTÃO DE LISTAGEM E ARMAZENAMOS NA VARIÁVEL, FAZENDO A FUNÇÃO DE LISTAGEM SER EXECUTADA AO CLICAR
+const executeBusca = document.getElementById("btnExecutarBusca").addEventListener("click", buscarPokemon); // PEGAMOS O ID DO BOTÃO DE BUSCA E ARMAZENAMOS NA VARIÁVEL, FAZENDO A FUNÇÃO DE BUSCA SER EXECUTADA AO CLICAR
 
 function iniciarJornada() { // ACIONA QUANDO CLICAMOS NO BOTÃO DE COMEÇAR JORNADA
 
@@ -59,15 +60,15 @@ function cadastrarPokemon() { // ACIONA A FUNÇÃO DE CADASTRO DE POKÉMON CASO 
 
 function listarPokemon() { // ACIONA A FUNÇÃO DE LISTAR OS POKÉMON JÁ CADASTRADOS
 
-    const listaDiv = document.getElementById("listaPokemon"); // PEGA A DIV QUE GERÁ A LISTAGEM DE POKÉMON PELO ID
+    const listaDiv = document.getElementById("listaPokemon"); // PEGA A DIV QUE GERA A LISTAGEM DE POKÉMON PELO ID
     listaDiv.innerHTML = ""; // LIMPA O CONTEÚDO ANTIGO
 
-    if (pokedexLista.length === 0) { // SE NÃO HOUVER NENHUM ELEMENTO NO ARRAY GLOBAL, GERÁ ESSA MENSAGEM: 
+    if (pokedexLista.length === 0) { // SE NÃO HOUVER NENHUM ELEMENTO NO ARRAY GLOBAL, GERA ESSA MENSAGEM: 
         listaDiv.innerHTML = "<p style='color: red;'>Nenhum Pokémon cadastrado ainda!</p>";
         return;
     }
 
-    pokedexLista.forEach((pokemon, index) => { // PERCORRE O ARRAY GLOBAL E GERÁ UMA ESTRUTURA PARA CADA UM DOS POKÉMON REGISTRADOS
+    pokedexLista.forEach((pokemon, index) => { // PERCORRE O ARRAY GLOBAL E GERA UMA ESTRUTURA PARA CADA UM DOS POKÉMON REGISTRADOS
 
         const cardPokemon = `<div style="border: 1px solid #ccc; padding: 10px; margin: 10px 0; border-radius: 5px;">
                                 <strong>#${index + 1} - ${pokemon.nome}</strong><br>
@@ -77,4 +78,36 @@ function listarPokemon() { // ACIONA A FUNÇÃO DE LISTAR OS POKÉMON JÁ CADAST
 
                             listaDiv.innerHTML += cardPokemon; // CRIA UM CARD PARA O POKÉMON ATUAL, SEM APAGAR OS QUE JÁ FORAM RENDERIZADOS
     })
+}
+
+function buscarPokemon() { // ACIONA A FUNÇÃO DE BUSCAR O POKÉMON PELO NOME
+
+    const termoBuscado = document.getElementById("buscaNome").value.trim(); // PEGA O VALOR DIGITADO NA ÁREA DE DIGITAÇÃO E ARMAZENA NA VARIÁVEL
+    const resultadoBuscaDiv = document.getElementById("resultadoBusca"); // RECEBE O ID DA DIV QUE MOSTRA O RESULTADO
+
+    if (termoBuscado === "") { // OCORRE CASO NÃO HÁ NENHUM VALOR DIGITADO
+        resultadoBuscaDiv.innerHTML = "<p style='color: red;'>Digite um nome válido para buscar!</p>";
+        return;
+    }
+
+    let encontrado = false; // VARIÁVEL UTILIZADA PARA APONTAR SE O VALOR FOI ENCONTRADO OU NÃO
+
+    pokedexLista.forEach((pokemon) => { // PERCORRE O ARRAY GLOBAL ONDE OS POKÉMON ESTÃO SALVOS
+
+        if (pokemon.nome.toLowerCase() === termoBuscado.toLowerCase()) { // CASO ENCONTRE ATRAVÉS DO NOME, GERA A ESTRUTURA ABAIXO COM OS TRÊS DADOS DO POKÉMON 
+            const cardResultado = `<p style="color: green; font-weight: bold;">Pokémon Encontrado!</p>
+                <div style="border: 2px solid green; padding: 10px; border-radius: 5px; background-color: #f0fff0;">
+                    <strong>${pokemon.nome}</strong><br>
+                    <span>Tipo: ${pokemon.tipo}</span><br>
+                    <span>Nível: ${pokemon.nivel}</span>
+                </div>`;
+
+                resultadoBuscaDiv.innerHTML = cardResultado; // GERA O CARD DE RESULTADO NA TELA DO SITE
+                encontrado = true; // ENCONTRADO SE TORNA TRUE
+        }
+    });
+
+    if (!encontrado) { // CASO NÃO SEJA ENCONTRADO, GERA ESSA MENSAGEM
+        resultadoBuscaDiv.innerHTML = "<p style='color: red;'>Pokémon não encontrado.</p>";
+    }
 }
