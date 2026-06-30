@@ -1,5 +1,3 @@
-Aqui está uma versão bilíngue mantendo a mesma estrutura e o espírito do projeto:
-
 # DevDex
 
 🇧🇷 **Uma Pokédex multilíngue criada para aprender programação desenvolvendo a mesma aplicação em diferentes linguagens.**
